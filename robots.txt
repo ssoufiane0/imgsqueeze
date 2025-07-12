@@ -1,0 +1,9 @@
+# ImgSqueeze – robots.txt
+# Allow every well-behaved crawler to access the public site.
+# If you ever add private or test folders, list them under “Disallow”.
+
+User-agent: *
+Disallow:
+
+# Point crawlers to the XML sitemap for faster, more complete indexing
+Sitemap: https://imgsqueeze.xyz/sitemap.xml
