@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- ---------- SEO BASICS ---------- -->
+  <title>Free Image Compressor – Compress JPEG / PNG or Convert to WebP Online</title>
+  <meta name="description"
+        content="Shrink images to the precise KB or MB you need right in your browser. Compress JPEG, PNG or convert to WebP. 100 % private – no uploads.">
+  <link rel="canonical" href="https://imgsqueeze.com/">
+
+  <!-- robots -->
+  <meta name="robots" content="index,follow,max-image-preview:large">
+
+  <!-- keyword cluster (optional: not a ranking factor, but some minor engines use it) -->
+  <meta name="keywords"
+        content="compress jpeg,image compressor,compress png,webp converter,compress image to 200kb,reduce image size online">
+
+  <!-- ---------- SOCIAL CARDS ---------- -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Free Image Compressor – JPG / PNG ↔ WebP">
+  <meta property="og:description" content="Compress and convert images without uploading them – enter your target size in KB or MB.">
+  <meta property="og:url"         content="https://imgsqueeze.com/">
+  <meta property="og:image"       content="https://imgsqueeze.com/og-cover.webp">
+
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <!-- ---------- STRUCTURED DATA ---------- -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ImgSqueeze",
+    "url": "https://imgsqueeze.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://imgsqueeze.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- FAQ rich-snippet -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Are my images uploaded?",
+       "acceptedAnswer":{"@type":"Answer","text":"No. Compression and conversion happen entirely in your browser with WebAssembly – files never leave your device."}},
+      {"@type":"Question","name":"Which formats are supported?",
+       "acceptedAnswer":{"@type":"Answer","text":"Input: JPEG, PNG. Output: WebP, JPEG, PNG."}}
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumb (helps Google Site-Links later) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[{
+      "@type":"ListItem","position":1,
+      "name":"Home","item":"https://imgsqueeze.com/"}
+    ]
+  }
+  </script>
+
+  <!-- ---------- PERF & SECURITY ---------- -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <!-- HTTP headers are preferred; meta fall-backs added for shared-hosting users -->
+  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+
+  <!-- ---------- CSS ---------- -->
+  <style>
+    :root{
+      --a:#0a84ff;
+      --g:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);
+      --bg:#f8f9fb; --bgD:#1e1f24;
+      --card:#fff;  --cardD:#2a2b31;
+      --txt:#111;   --txtD:#eee;
+      --r:12px;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    }
+    @media (prefers-color-scheme:dark){
+      :root{--bg:var(--bgD);--card:var(--cardD);--txt:var(--txtD);}
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--txt);display:flex;flex-direction:column;min-height:100vh}
+    header{padding:2rem 1rem;text-align:center}
+    h1{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:.35rem}
+
+    main{flex:1;max-width:960px;width:100%;margin:0 auto;padding:1rem}
+    #zone{border:2px dashed #8a8a8a;border-radius:var(--r);padding:3rem 1rem;text-align:center;transition:.25s}
+    #zone.drag{border-color:var(--a);background:#eef6ff}
+    #list{margin-top:2rem;display:none}
+
+    .card{background:var(--card);border-radius:var(--r);padding:1rem;margin-bottom:1rem;
+          box-shadow:0 3px 8px rgba(0,0,0,.05)}
+
+    button,.btn{background:var(--g);color:#fff;border:none;border-radius:8px;
+          padding:.7rem 1.4rem;font-weight:600;cursor:pointer;transition:transform .15s}
+    button:not([disabled]):hover{transform:translateY(-2px)}
+    button[disabled]{opacity:.45;cursor:default}
+
+    label{font-weight:600}
+    small{font-size:.85rem;color:#666}
+
+    progress{width:100%;height:6px;border:none;border-radius:3px;background:#ccc}
+    progress::-webkit-progress-value{background:var(--a);border-radius:3px}
+
+    input[type=number]{width:5rem;padding:.25rem .4rem;font:inherit;border:1px solid #ccc;border-radius:6px}
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+
+    select{padding:.25rem .4rem;border:1px solid #ccc;border-radius:6px;font:inherit}
+
+    body.dark{--bg:var(--bgD);--card:var(--cardD);--txt:var(--txtD)}
+    .theme{position:fixed;top:1rem;right:1rem}
+  </style>
+</head>
+
+<body>
+<!-- Manual dark-mode toggle -->
+<button class="theme btn" aria-label="Toggle colour scheme">🌙</button>
+
+<header>
+  <h1>Image Compressor &amp; WebP / JPG / PNG Converter</h1>
+  <h2>Type your target size in KB or MB – everything stays on your device</h2>
+</header>
+
+<main>
+  <div id="zone" tabindex="0" aria-label="Drop images or click to choose">
+    <p><strong>Drag &amp; drop</strong> images here or</p>
+    <button id="choose" class="btn" style="margin-top:.8rem">Choose image</button>
+    <input type="file" id="pick" accept="image/*" hidden multiple>
+    <p style="font-size:.85rem;color:#777;margin-top:.8rem">JPEG / PNG in – save as WebP (default), JPEG, PNG</p>
+  </div>
+
+  <div id="list"></div>
+</main>
+
+<footer style="padding:1rem;text-align:center;font-size:.85rem;color:#888">
+  © 2025 ImgSqueeze  •  <a href="/privacy.html">Privacy</a>
+</footer>
+
+<!-- ---------- LIBRARY ---------- -->
+<script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
+
+<!-- ---------- LOGIC ---------- -->
+<script>
+const $   = id => document.getElementById(id);
+const zone   = $('zone'),
+      pick   = $('pick'),
+      choose = $('choose'),
+      list   = $('list'),
+      seen   = new Set(),
+      human  = b => (b/1024).toFixed(1)+' KB';
+
+/* dark-mode toggle */
+document.querySelector('.theme').onclick = e=>{
+  document.body.classList.toggle('dark');
+  e.target.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+};
+
+/* reopen picker even for same file */
+function openPicker(){ pick.value=''; pick.click(); }
+choose.onclick = openPicker;
+zone.onclick   = e => { if(e.target===zone) openPicker(); };
+
+/* binary-search to hit target size ±1 KB */
+async function compressToSize(file,mime,targetKB,tol=1){
+  let lo=0.1, hi=0.95, best=null;
+  for(let i=0;i<7;i++){
+    const q=(lo+hi)/2;
+    const blob=await imageCompression(file,{fileType:mime,initialQuality:q,useWebWorker:true});
+    const s=blob.size/1024;
+    if(s>targetKB){ hi=q-0.005; }
+    else{ best=blob; if(targetKB-s<=tol) break; lo=q+0.005; }
+  }
+  return best||file;
+}
+
+/* card UI */
+function card(f){
+  const el=document.createElement('div'); el.className='card';
+  el.innerHTML=`
+    <strong>${f.name}</strong><br>
+    <small>Original ${human(f.size)}</small><br><br>
+    <label>Save as 
+      <select>
+        <option value="image/webp" selected>WebP (best)</option>
+        <option value="image/jpeg">JPEG (lossy)</option>
+        <option value="image/png">PNG (lossless)</option>
+      </select>
+    </label>&ensp;
+    <label>Target 
+      <input type="number" min="5" value="10"> 
+      <select><option>KB</option><option>MB</option></select>
+    </label><br><br>
+    <progress value="0" max="100"></progress><br>
+    <button disabled style="margin-top:.6rem">Working…</button>`;
+  return el;
+}
+
+/* main pipeline */
+async function process(file){
+  const sig=`${file.name}-${file.size}-${file.lastModified}`;
+  if(seen.has(sig)) return; seen.add(sig);
+
+  list.style.display='block';
+  const el=card(file); list.appendChild(el);
+  const btn   = el.querySelector('button'),
+        fmt   = el.querySelector('select'),
+        num   = el.querySelector('input[type=number]'),
+        unit  = el.querySelectorAll('select')[1],
+        bar   = el.querySelector('progress'),
+        meta  = el.querySelector('small');
+
+  async function run(){
+    btn.disabled=true; btn.textContent='Working…'; bar.value=5;
+    let targetKB=+num.value; if(unit.value==='MB') targetKB*=1024;
+    const blob=await compressToSize(file,fmt.value,targetKB);
+    bar.value=100;
+    const url=URL.createObjectURL(blob);
+    meta.innerHTML=`Original ${human(file.size)} → <strong>${human(blob.size)}</strong>`;
+    btn.textContent='Download'; btn.disabled=false;
+    btn.onclick=()=>{const a=document.createElement('a');
+      a.href=url; a.download=file.name.replace(/\.[^.]+$/,'')+'.'+fmt.value.split('/')[1]; a.click();};
+  }
+  await run();
+  fmt.onchange=run; num.oninput=run; unit.onchange=run;
+}
+
+/* Drag-n-drop + picker wiring */
+['dragenter','dragover','dragleave','drop'].forEach(ev=>{
+  zone.addEventListener(ev,e=>{
+    e.preventDefault();
+    if(ev==='dragover') zone.classList.add('drag');
+    if(ev==='dragleave'||ev==='drop') zone.classList.remove('drag');
+    if(ev==='drop') [...e.dataTransfer.files].forEach(process);
+  });
+});
+pick.addEventListener('change',e=>[...e.target.files].forEach(process));
+</script>
+</body>
+</html>
