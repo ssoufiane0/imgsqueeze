@@ -2,360 +2,296 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- ---------- SEO BASICS ---------- -->
-  <title>Compress Image Online – Free Image Compressor & WebP Converter</title>
+  <title>Compress Image Online – Free Image Compressor &amp; WebP Converter</title>
   <meta name="description" content="Reduce image size to a specific KB or MB with this free online tool. Compress JPEG or PNG images or convert to WebP format. 100% private – no uploads required.">
-  <!-- Alternate language SEO metadata for reference -->
-  <!-- French: <title>Compresser une image en ligne – Compresseur d’images gratuit & convertisseur WebP</title>
-       <meta name="description" content="Réduisez la taille de vos images en KB ou MB avec cet outil gratuit en ligne. Compressez des images JPEG/PNG ou convertissez-les en WebP. Vos fichiers restent sur votre appareil – aucune donnée n’est envoyée."> -->
-  <!-- Dutch: <title>Afbeelding comprimeren online – gratis afbeeldingscompressor & WebP-converter</title>
-       <meta name="description" content="Verklein afbeeldingen tot een specifieke KB- of MB-grootte met deze gratis online tool. Comprimeer JPEG/PNG of converteer naar WebP-formaat. 100% privé – er worden geen bestanden geüpload."> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://imgsqueeze.xyz/">
-  <!-- hreflang alternate links -->
-  <link rel="alternate" hreflang="en" href="https://imgsqueeze.xyz/">
-  <link rel="alternate" hreflang="fr" href="https://imgsqueeze.xyz/fr/">
-  <link rel="alternate" hreflang="nl" href="https://imgsqueeze.xyz/nl/">
-  <link rel="alternate" hreflang="x-default" href="https://imgsqueeze.xyz/">
-  <!-- robots -->
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <!-- keyword cluster (optional) -->
-  <meta name="keywords" content="compress jpeg,image compressor,compress png,webp converter,compress image to 200kb,reduce image size online,compresser image en ligne,afbeelding comprimeren online">
-  <!-- ---------- SOCIAL CARDS ---------- -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Free Image Compressor – JPG / PNG ↔ WebP">
-  <meta property="og:description" content="Compress and convert images without uploading – reduce image size by specifying a target KB or MB.">
-  <meta property="og:url" content="https://imgsqueeze.xyz/">
-  <meta property="og:image" content="https://imgsqueeze.xyz/og-cover.webp">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" sizes="32x32" href="/logosqz.png">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="32x32"  href="/logosqz.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/logosqz.png">
-  <!-- ---------- STRUCTURED DATA ---------- -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "ImgSqueeze",
-    "url": "https://imgsqueeze.xyz/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://imgsqueeze.com/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-  <!-- FAQ rich-snippet -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Are my images uploaded?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Compression and conversion happen entirely in your browser with WebAssembly – files never leave your device."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which formats are supported?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Input: JPEG, PNG. Output: WebP, JPEG, PNG."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I reduce an image's file size online?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use an online image compressor like ImgSqueeze. Simply drag and drop your image, set a target size (in KB or MB), and download the compressed image. ImgSqueeze reduces the file size while preserving as much quality as possible, and everything runs in your browser so your image never leaves your device."
-        }
-      }
-    ]
-  }
-  </script>
-  <!-- Breadcrumb -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://imgsqueeze.xyz/"
-      }
-    ]
-  }
-  </script>
-  <!-- ---------- PERF & SECURITY ---------- -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Security / perf -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <!-- HTTP headers are preferred; meta fall-backs added for shared-hosting users -->
-  <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
-  <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
-  <!-- ---------- CSS ---------- -->
+  <meta http‑equiv="Cross-Origin-Opener-Policy"  content="same-origin">
+  <meta http‑equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+
   <style>
+    /* 1) RESPONSIVE BASE FONT-SIZE */
+    html { font-size: 16px; }
+    @media (max-width: 768px) { html { font-size: 15px; } }
+    @media (max-width: 480px) { html { font-size: 14px; } }
+
     :root {
-      --a: #0a84ff;
-      --g: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-      --bg: #f8f9fb; --bgD: #1e1f24;
-      --card: #fff;  --cardD: #2a2b31;
-      --txt: #111;   --txtD: #eee;
-      --r: 12px;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      --a:    #0a84ff;
+      --g:    linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);
+      --bg:   #f8f9fb;   --bgD: #1e1f24;
+      --card: #ffffff;   --cardD:#2a2b31;
+      --txt:  #111111;   --txtD:#eeeeee;
+      --r:    16px;
+      --font-main: 'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
     }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: var(--bgD); --card: var(--cardD); --txt: var(--txtD); }
+    /* DARK MODE overrides */
+    body.dark {
+      --bg:   var(--bgD);
+      --card: var(--cardD);
+      --txt:  var(--txtD);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--txt); display: flex; flex-direction: column; min-height: 100vh; }
-    header { padding: 2rem 1rem; text-align: center; }
-    h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); margin-bottom: .35rem; }
-    main { flex: 1; max-width: 960px; width: 100%; margin: 0 auto; padding: 1rem; }
-    #zone { border: 2px dashed #8a8a8a; border-radius: var(--r); padding: 3rem 1rem; text-align: center; transition: .25s; }
-    #zone.drag { border-color: var(--a); background: #eef6ff; }
-    #list { margin-top: 2rem; display: none; }
-    .card { background: var(--card); border-radius: var(--r); padding: 1rem; margin-bottom: 1rem; box-shadow: 0 3px 8px rgba(0,0,0,.05); }
-    button, .btn { background: var(--g); color: #fff; border: none; border-radius: 8px; padding: .7rem 1.4rem; font-weight: 600; cursor: pointer; transition: transform .15s; }
-    button:not([disabled]):hover { transform: translateY(-2px); }
-    button[disabled] { opacity: .45; cursor: default; }
-    label { font-weight: 600; }
-    small { font-size: .85rem; color: #666; }
-    progress { width: 100%; height: 6px; border: none; border-radius: 3px; background: #ccc; }
-    progress::-webkit-progress-value { background: var(--a); border-radius: 3px; }
-    input[type=number] { width: 5rem; padding: .25rem .4rem; font: inherit; border: 1px solid #ccc; border-radius: 6px; }
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-    select { padding: .25rem .4rem; border: 1px solid #ccc; border-radius: 6px; font: inherit; }
-    body.dark { --bg: var(--bgD); --card: var(--cardD); --txt: var(--txtD); }
-    .theme { position: fixed; top: 1rem; right: 1rem; }
-    /* Multilingual content styles */
-    .lang-fr, .lang-nl { display: none; }  /* hide non-default languages */
-    h2.section-title { margin: 1.5rem 0 1rem; }
-    h3 { margin: 1rem 0 0.5rem; }
-    p { margin-bottom: 1rem; }
+
+    /* RESET & BASE */
+    * { box-sizing: border-box; margin:0; padding:0 }
+    html {
+      font-family: var(--font-main);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
+    }
+    body {
+      background: var(--bg);
+      color: var(--txt);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ---------- Navbar ---------- */
+    nav.top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+      color: var(--txt);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+    }
+
+    /* ---------- Buttons ---------- */
+    button, .btn {
+      background: var(--g);
+      background-size: 200% 200%;
+      color: #fff;
+      border: none;
+      border-radius: 9999px;
+      padding: .7rem 1.6rem;
+      font: 600 1rem var(--font-main);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      box-shadow: 0 3px 6px rgba(0,0,0,.12);
+      transition: background-position .3s, transform .15s, box-shadow .15s;
+    }
+    button:not([disabled]):hover, .btn:not([disabled]):hover {
+      background-position: 100% 0;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 10px rgba(0,0,0,.18);
+    }
+    button:focus-visible {
+      outline: 3px solid var(--a);
+      outline-offset: 3px;
+    }
+    button[disabled] {
+      opacity: .45;
+      cursor: default;
+    }
+    .btn.donate {
+      font-size: .95rem;
+      padding: .6rem 1.4rem;
+      text-decoration: none;
+    }
+
+    /* Theme toggle pill */
+    .theme {
+      width: 44px;
+      height: 44px;
+      border-radius: 9999px;
+      font-size: 1.1rem;
+      backdrop-filter: blur(4px);
+      background: rgba(0,0,0,.05);
+      transition: background .2s;
+    }
+    body.dark .theme {
+      background: rgba(255,255,255,.08);
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+    h1 {
+      font-size: clamp(1.8rem,4vw,2.4rem);
+      font-weight: 700;
+      margin-bottom: .35rem;
+    }
+    h2 {
+      font-size: clamp(1rem,2.2vw,1.25rem);
+      font-weight: 500;
+      color: #555;
+    }
+
+    /* ---------- Layout ---------- */
+    main {
+      flex: 1;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    /* ---------- Drop zone ---------- */
+    #zone {
+      border: 2px dashed #8a8a8a;
+      border-radius: var(--r);
+      padding: 3rem 1rem;
+      text-align: center;
+      transition: border-color .25s, background .25s;
+    }
+    #zone.drag {
+      border-color: var(--a);
+      background: #eef6ff;
+    }
+
+    /* ---------- Result card ---------- */
+    .card {
+      background: var(--card);
+      border-radius: var(--r);
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      box-shadow: 0 3px 14px rgba(0,0,0,.05);
+      transition: transform .15s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+    }
+
+    /* ---------- Form controls ---------- */
+    input[type=number], select {
+      padding: .4rem .6rem;
+      font: .95rem var(--font-main);
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    input[type=number] {
+      width: 5rem;
+    }
+    select {
+      appearance: none;
+      background: var(--card);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23666'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right .75rem center;
+      background-size: 1rem;
+    }
+    select:focus, input[type=number]:focus {
+      outline: 2px solid var(--a);
+      outline-offset: 2px;
+    }
+
+    /* ---------- Progress bar ---------- */
+    progress {
+      width: 100%;
+      height: 6px;
+      border: none;
+      border-radius: 3px;
+      background: #ccc;
+    }
+    progress::-webkit-progress-value {
+      background: var(--a);
+      border-radius: 3px;
+    }
+
+    h3 {
+      margin: 1rem 0 .5rem;
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    footer {
+      padding: 1rem;
+      text-align: center;
+      font-size: .85rem;
+      color: #888;
+    }
+
+    /* Adjust drop-zone padding on tablet */
+    @media (max-width: 768px) {
+      #zone {
+        padding: 2.5rem 1rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Manual dark-mode toggle -->
-  <button class="theme btn" aria-label="Toggle color scheme">🌙</button>
-  <!-- Language selector -->
-  <select id="lang-select" aria-label="Select language" style="position: fixed; top: 1rem; right: 8rem;">
-    <option value="en" selected>English</option>
-    <option value="fr">Français</option>
-    <option value="nl">Nederlands</option>
-  </select>
-  <header>
-    <h1><span class="lang-en">Online Image Compressor &amp; WebP/JPG/PNG Converter</span><span class="lang-fr">Compresseur d’images &amp; convertisseur WebP/JPG/PNG en ligne</span><span class="lang-nl">Online afbeeldingscompressor &amp; WebP/JPG/PNG-converter</span></h1>
-    <h2><span class="lang-en">Type your target size in KB or MB – images never leave your device</span><span class="lang-fr">Indiquez la taille cible en KB ou MB – vos images restent sur votre appareil</span><span class="lang-nl">Voer de gewenste grootte in (KB of MB) – uw afbeeldingen blijven op uw apparaat</span></h2>
-  </header>
-  <main>
-    <div id="zone" tabindex="0" aria-label="Drop images or click to choose">
-      <p class="lang-en"><strong>Drag &amp; drop</strong> images here or</p>
-      <p class="lang-fr"><strong>Glissez-déposez</strong> des images ici ou</p>
-      <p class="lang-nl"><strong>Sleep &amp; plaats</strong> afbeeldingen hier of</p>
-      <button id="choose" class="btn" style="margin-top:.8rem;"><span class="lang-en">Choose image</span><span class="lang-fr">Choisir une image</span><span class="lang-nl">Afbeelding kiezen</span></button>
-      <input type="file" id="pick" accept="image/*" hidden multiple>
-      <p class="lang-en" style="font-size:.85rem; color: #777; margin-top:.8rem;">JPEG/PNG in – save as WebP (default), JPEG, PNG</p>
-      <p class="lang-fr" style="font-size:.85rem; color: #777; margin-top:.8rem;">JPEG/PNG en entrée – enregistrez en WebP (par défaut), JPEG ou PNG</p>
-      <p class="lang-nl" style="font-size:.85rem; color: #777; margin-top:.8rem;">Invoer: JPEG/PNG – opslaan als WebP (standaard), JPEG, PNG</p>
+  <!-- Navbar -->
+  <nav class="top-nav">
+    <a class="logo" href="#">ImgSqueeze</a>
+    <div class="nav-actions">
+      <a href="https://www.buymeacoffee.com/imgsqueeze" class="btn donate" target="_blank" rel="noopener noreferrer">
+        ☕ Donate
+      </a>
+      <button class="theme" aria-label="Toggle color scheme">🌙</button>
     </div>
-    <div id="list"></div>
-    <!-- FAQ Section -->
-    <h2 class="section-title"><span class="lang-en">Frequently Asked Questions</span><span class="lang-fr">Questions fréquentes</span><span class="lang-nl">Veelgestelde vragen</span></h2>
-    <!-- Question 1 -->
-    <h3><span class="lang-en">Are my images uploaded?</span><span class="lang-fr">Mes images sont-elles envoyées sur un serveur ?</span><span class="lang-nl">Worden mijn afbeeldingen geüpload?</span></h3>
-    <p><span class="lang-en">No. Compression and conversion happen entirely in your browser with WebAssembly – files never leave your device.</span><span class="lang-fr">Non. La compression et la conversion s’effectuent entièrement dans votre navigateur (via WebAssembly) – vos fichiers ne quittent jamais votre appareil.</span><span class="lang-nl">Nee. Compressie en conversie gebeuren volledig in uw browser (met WebAssembly) – bestanden verlaten uw apparaat nooit.</span></p>
-    <!-- Question 2 -->
-    <h3><span class="lang-en">Which formats are supported?</span><span class="lang-fr">Quels formats sont pris en charge ?</span><span class="lang-nl">Welke formaten worden ondersteund?</span></h3>
-    <p><span class="lang-en">Input: JPEG, PNG. Output: WebP, JPEG, PNG.</span><span class="lang-fr">Entrée : JPEG, PNG. Sortie : WebP, JPEG, PNG.</span><span class="lang-nl">Invoer: JPEG, PNG. Uitvoer: WebP, JPEG, PNG.</span></p>
-    <!-- Question 3 -->
-    <h3><span class="lang-en">How can I reduce an image&#39;s file size online?</span><span class="lang-fr">Comment réduire la taille d’une image en ligne ?</span><span class="lang-nl">Hoe kan ik online de bestandsgrootte van een afbeelding verkleinen?</span></h3>
-    <p><span class="lang-en">Use an online image compressor like ImgSqueeze. Simply drag and drop your image (or click to choose it), set a target size (KB or MB), and download the compressed image. ImgSqueeze will reduce the file size while preserving as much quality as possible. And because everything runs in your browser, your image never leaves your device.</span><span class="lang-fr">Utilisez un compresseur d’images en ligne tel qu’ImgSqueeze. Glissez-déposez votre image (ou cliquez pour la sélectionner), indiquez la taille cible (en KB ou MB), puis téléchargez l’image compressée. ImgSqueeze réduit la taille du fichier tout en conservant un maximum de qualité. Et comme tout se passe dans votre navigateur, votre image ne quitte jamais votre appareil.</span><span class="lang-nl">Gebruik een online afbeeldingscompressor zoals ImgSqueeze. Sleep eenvoudig uw afbeelding naar de tool (of klik om er een te kiezen), stel een doelformaat in (KB of MB) en download de gecomprimeerde afbeelding. ImgSqueeze verkleint de bestandsgrootte met behoud van zoveel mogelijk kwaliteit. En omdat alles in uw browser gebeurt, verlaat uw afbeelding uw apparaat nooit.</span></p>
-    <!-- Privacy Policy Section -->
-    <h2 id="privacy-policy" class="section-title"><span class="lang-en">Privacy Policy</span><span class="lang-fr">Politique de confidentialité</span><span class="lang-nl">Privacybeleid</span></h2>
-    <p class="lang-en">ImgSqueeze is built with privacy in mind. All image compression and conversion are performed locally in your web browser – no files are ever uploaded to any server. We do not collect or store any of your images or personal data. This site uses no cookies or trackers, so you can compress images with complete confidence in your privacy.</p>
-    <p class="lang-fr">ImgSqueeze est conçu pour protéger votre vie privée. Toutes les opérations de compression et de conversion d’images sont effectuées localement dans votre navigateur web – aucune image n’est envoyée à un serveur. Nous ne collectons ni ne stockons aucune de vos images ni données personnelles. Ce site n’utilise aucun cookie ni traqueur, vous pouvez donc compresser vos images en toute tranquillité.</p>
-    <p class="lang-nl">ImgSqueeze is ontworpen met het oog op privacy. Alle beeldcompressie en -conversie worden lokaal in uw webbrowser uitgevoerd – er worden geen afbeeldingen naar een server geüpload. We verzamelen of bewaren geen van uw afbeeldingen of persoonlijke gegevens. Deze site gebruikt geen cookies of trackers, zodat u met een gerust hart afbeeldingen kunt comprimeren.</p>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Online Image Compressor &amp; WebP/JPG/PNG Converter</h1>
+    <h2>Type your target size in KB or MB – images never leave your device</h2>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- Upload zone -->
+    <div id="zone" tabindex="0" aria-label="Drop images or click to choose">
+      <p><strong>Drag &amp; drop</strong> images here or</p>
+      <button id="choose" class="btn" style="margin-top: .8rem;">Choose image</button>
+      <input type="file" id="pick" accept="image/*" hidden multiple>
+      <p style="font-size: .85rem; color: #777; margin-top: .8rem;">
+        JPEG/PNG in – save as WebP (default), JPEG, PNG
+      </p>
+    </div>
+
+    <!-- Result list -->
+    <div id="list" style="display: none;"></div>
+
+    <!-- FAQ -->
+    <h2 style="margin: 1.5rem 0 1rem;">Frequently Asked Questions</h2>
+    <h3>Are my images uploaded?</h3>
+    <p>No. Compression and conversion happen entirely in your browser with WebAssembly – files never leave your device.</p>
+    <h3>Which formats are supported?</h3>
+    <p>Input: JPEG, PNG. Output: WebP, JPEG, PNG.</p>
+    <h3>How can I reduce an image’s file size online?</h3>
+    <p>Use an online image compressor like ImgSqueeze. Drag‑and‑drop your image (or click to choose it), set a target size (KB or MB), and download the compressed version. All processing stays local, so your image never leaves your device.</p>
+
+    <!-- Privacy Policy -->
+    <h2 id="privacy-policy" style="margin: 1.5rem 0 1rem;">Privacy Policy</h2>
+    <p>ImgSqueeze is built with privacy in mind. All compression and conversion operations are performed locally in your browser – no files are ever uploaded. We do not collect or store your images or personal data, and we use no cookies or trackers.</p>
   </main>
-  <footer style="padding:1rem; text-align:center; font-size:.85rem; color:#888;">
-    © 2025 ImgSqueeze 
-  </footer>
-  <!-- ---------- LIBRARY ---------- -->
+
+  <footer>© 2025 ImgSqueeze</footer>
+
+  <!-- Image-compression library -->
   <script src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"></script>
-  <!-- ---------- LOGIC ---------- -->
-  <script>
-    const $ = id => document.getElementById(id);
-    const zone = $('zone'),
-          pick = $('pick'),
-          choose = $('choose'),
-          list = $('list');
-    const seen = new Set();          // single declaration
-    let currentLang = 'en';
-    const translations = {
-      en: { original: "Original", saveAs: "Save as", target: "Target", working: "Working…", download: "Download" },
-      fr: { original: "Originale", saveAs: "Enregistrer sous", target: "Taille cible", working: "En cours…", download: "Télécharger" },
-      nl: { original: "Origineel", saveAs: "Opslaan als", target: "Doelgrootte", working: "Bezig…", download: "Downloaden" }
-    };
-    const formatOptions = {
-      en: '<option value="image/webp" selected>WebP (best)</option><option value="image/jpeg">JPEG (lossy)</option><option value="image/png">PNG (lossless)</option>',
-      fr: '<option value="image/webp" selected>WebP (meilleur)</option><option value="image/jpeg">JPEG (avec perte)</option><option value="image/png">PNG (sans perte)</option>',
-      nl: '<option value="image/webp" selected>WebP (beste)</option><option value="image/jpeg">JPEG (met verlies)</option><option value="image/png">PNG (zonder verlies)</option>'
-    };
-    /* dark-mode toggle */
-    document.querySelector('.theme').onclick = e => {
-      document.body.classList.toggle('dark');
-      e.target.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-    };
-    /* reopen picker even for same file */
-    function openPicker() { pick.value = ''; pick.click(); }
-    choose.onclick = openPicker;
-    zone.onclick = e => { if (e.target === zone) openPicker(); };
-    /* binary-search to hit target size ±1 KB */
-    async function compressToSize(file, mime, targetKB, tol = 1) {
-      let lo = 0.1, hi = 0.95, best = null;
-      for (let i = 0; i < 7; i++) {
-        const q = (lo + hi) / 2;
-        const blob = await imageCompression(file, { fileType: mime, initialQuality: q, useWebWorker: true });
-        const s = blob.size / 1024;
-        if (s > targetKB) {
-          hi = q - 0.005;
-        } else {
-          best = blob;
-          if (targetKB - s <= tol) break;
-          lo = q + 0.005;
-        }
-      }
-      return best || file;
-    }
-    /* card UI */
-    const human = b => (b / 1024).toFixed(1) + ' KB';
-    function card(f) {
-      const el = document.createElement('div');
-      el.className = 'card';
-      el.innerHTML = `
-        <strong>${f.name}</strong><br>
-        <small class="size-info">${translations[currentLang].original} ${human(f.size)}</small><br><br>
-        <label class="label-save">${translations[currentLang].saveAs} 
-          <select>${formatOptions[currentLang]}</select>
-        </label>&ensp;
-        <label class="label-target">${translations[currentLang].target} 
-          <input type="number" min="5" value="10"> 
-          <select><option>KB</option><option>MB</option></select>
-        </label><br><br>
-        <progress value="0" max="100"></progress><br>
-        <button disabled style="margin-top:.6rem">${translations[currentLang].working}</button>`;
-      return el;
-    }
-    /* main processing pipeline */
-    async function process(file) {
-      const sig = `${file.name}-${file.size}-${file.lastModified}`;
-      if (seen.has(sig)) return;
-      seen.add(sig);
-      list.style.display = 'block';
-      const el = card(file);
-      list.appendChild(el);
-      const btn   = el.querySelector('button'),
-            fmt   = el.querySelector('select'),
-            num   = el.querySelector('input[type=number]'),
-            unit  = el.querySelectorAll('select')[1],
-            bar   = el.querySelector('progress'),
-            meta  = el.querySelector('.size-info');
-      async function run() {
-        btn.disabled = true;
-        btn.textContent = translations[currentLang].working;
-        bar.value = 5;
-        let targetKB = +num.value;
-        if (unit.value === 'MB') targetKB *= 1024;
-        const blob = await compressToSize(file, fmt.value, targetKB);
-        bar.value = 100;
-        const url = URL.createObjectURL(blob);
-        meta.innerHTML = `${translations[currentLang].original} ${human(file.size)} → <strong>${human(blob.size)}</strong>`;
-        meta.dataset.orig = file.size;
-        meta.dataset.new = blob.size;
-        btn.textContent = translations[currentLang].download;
-        btn.disabled = false;
-        btn.onclick = () => {
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = file.name.replace(/\.[^.]+$/, '') + '.' + fmt.value.split('/')[1];
-          a.click();
-        };
-      }
-      await run();
-      fmt.onchange = run;
-      num.oninput = run;
-      unit.onchange = run;
-    }
-    /* Drag & drop + file picker */
-    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(ev => {
-      zone.addEventListener(ev, e => {
-        e.preventDefault();
-        if (ev === 'dragover') zone.classList.add('drag');
-        if (ev === 'dragleave' || ev === 'drop') zone.classList.remove('drag');
-        if (ev === 'drop') [...e.dataTransfer.files].forEach(process);
-      });
-    });
-    pick.addEventListener('change', e => {
-      [...e.target.files].forEach(process);
-    });
-    /* language toggle */
-    const langSelect = $('lang-select');
-    const ariaLabels = {
-      en: "Drop images or click to choose",
-      fr: "Glissez-déposez des images ou cliquez pour en choisir",
-      nl: "Sleep afbeeldingen hier of klik om te kiezen"
-    };
-    function switchLanguage(lang) {
-      if (lang === currentLang) return;
-      currentLang = lang;
-      document.documentElement.lang = lang;
-      // Toggle visibility of each language's elements
-      ['en', 'fr', 'nl'].forEach(code => {
-        document.querySelectorAll('.lang-' + code).forEach(el => {
-          if (code === lang) {
-            if (el.tagName === 'SPAN') {
-              el.style.display = 'inline';
-            } else {
-              el.style.display = 'block';
-            }
-          } else {
-            el.style.display = 'none';
-          }
-        });
-      });
-      zone.setAttribute('aria-label', ariaLabels[lang]);
-      // Update existing cards
-      document.querySelectorAll('.size-info').forEach(el => {
-        if (el.dataset.orig && el.dataset.new) {
-          const origBytes = Number(el.dataset.orig), newBytes = Number(el.dataset.new);
-          el.innerHTML = `${translations[lang].original} ${human(origBytes)} → <strong>${human(newBytes)}</strong>`;
-        }
-      });
-      document.querySelectorAll('.card button').forEach(btn => {
-        btn.textContent = btn.disabled ? translations[lang].working : translations[lang].download;
-      });
-      document.querySelectorAll('.card').forEach(card => {
-        const fmtSelect = card.querySelector('select');
-        if (fmtSelect) {
-          const currentVal = fmtSelect.value;
-          fmtSelect.innerHTML = formatOptions[lang];
-          fmtSelect.value = currentVal;
-        }
-        const saveLabel = card.querySelector('.label-save');
-        const targetLabel = card.querySelector('.label-target');
-        if (saveLabel && saveLabel.firstChild) {
-          saveLabel.firstChild.nodeValue = translations[lang].saveAs + ' ';
-        }
-        if (targetLabel && targetLabel.firstChild) {
-          targetLabel.firstChild.nodeValue = translations[lang].target + ' ';
-        }
-      });
-    }
-    langSelect.onchange = () => { switchLanguage(langSelect.value); };
-  </script>
+
+  <!-- Logic & theme toggle -->
+  <script src="app.obf.js"></script>
 </body>
 </html>
